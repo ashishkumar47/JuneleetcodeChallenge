@@ -1,0 +1,3 @@
+The idea is to find the mirror of the tree.
+By traversing each node in a postOrder traversal and exchanging the left and right pointer at each node will give the
+mirror of the existing tree.
