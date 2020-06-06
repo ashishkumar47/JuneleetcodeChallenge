@@ -1,0 +1,24 @@
+Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k),
+ where h is the height of the person and k is the number of people in front of this person who have a height
+ greater than or equal to h. Write an algorithm to reconstruct the queue.
+
+Note:
+The number of people is less than 1,100.
+
+Example 1
+Input:
+[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
+
+Output:
+[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
+
+The idea to solve the problem is to arrange the queue in such a way that k people will be placed infront of the
+element which has height greater than or equal to the element.we first sort the array in increasing order.
+first based on there height, if there height is same then on the basis of the k.
+we can't put higher k count value infront of lower k count value.this will disturb the sequence of queue.
+suppose,
+[5,1] and [5,2]
+[5,2] can't be placed infront of [5,1] because it needs only one element greater than its height but [5,2] needs
+2 element.if we place 2 elements infront of it then it will disturb the count of [5,1].
+and then place each element in the list on the basis of there k value and then convert the list in array and
+return.
