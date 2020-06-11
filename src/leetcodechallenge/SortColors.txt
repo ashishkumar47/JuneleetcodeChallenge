@@ -1,0 +1,33 @@
+Given an array with n objects colored red, white or blue,
+sort them in-place so that objects of the same color are adjacent, with the colors in the order red,
+white and blue.
+
+Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+
+Note: You are not suppose to use the library's sort function for this problem.
+
+Example:
+Input: [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+Follow up:
+A rather straight forward solution is a two-pass algorithm using counting sort.
+First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
+Could you come up with a one-pass algorithm using only constant space?
+
+
+Approach 1:
+sort the array in ascending order.
+
+Approach 2:
+This approach uses the counting sort algorithm, first we count the corresponding 0's,1's,2's respectively and replace
+the values in current array.
+
+Approach 3:
+approach 3 is called dutchman flag pole algorithm, In this we treat one element as pole and arrange the remaining two
+elements around it.
+we take 0's indexposition and 2's indexposition and treat 1 as pole. when we encounter 0 then we exchange it with
+its indexposition and increament both currentIndex and indexposition, if we encounter 2 then we excahnge it with
+its indexposition and decrement indexposition only because we are not sured about the new element at the current
+position after swap it can be either 1 or 0, so we have to again check this element to put it at its correct position
+and if we encounter 1, we just increment the current index.
